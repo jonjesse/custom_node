@@ -1,6 +1,7 @@
 #!groovy
 
 def custImg = ""
+println(env.BUILD_ID)
 
 pipeline {
   agent any
@@ -34,11 +35,11 @@ pipeline {
 	 }
 	}
       }
-      stage ('Deploy') {
+      stage ('Cleanup') {
 	steps {
 	 script {
-	  docker.withRegistry('https://registry_new') {
-	    custImg.push()
+	    int old_build = env.BUILID_ID-1
+	    sh 'docker rmi node-test:${old_build}'
 	   }
 	 }
 	}
