@@ -2,12 +2,13 @@
 
 pipeline {
   agent any
+  def custImg
     stages {
       stage ('Build') {
         steps {
 	  script {
           checkout scm
-	  def custImg = docker.build("node:${env.BUILD_ID}")
+	  custImg = docker.build("node-test:${env.BUILD_ID}")
          }
 	}
       }      
