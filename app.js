@@ -1,7 +1,7 @@
-const exp = require('express')
-const app = exp()
+var exp = require('express');
+var app = exp();
 
-app.get('/', (req, res) => res.send('this is NOT hello world...'))
+app.get('/', (req, res) => res.send('this is NOT hello world...'));
 var sleep = require('system-sleep');
 sleep(10);
 
