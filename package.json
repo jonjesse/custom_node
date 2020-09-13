@@ -1,5 +1,5 @@
 {
-  "name": "package.json",
+  "name": "sample_node",
   "version": "1.0.0",
   "description": "Simple Hello World demo app",
   "main": "app.js",
