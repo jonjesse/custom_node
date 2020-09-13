@@ -9,6 +9,10 @@ describe("Hello World Server", function() {
     it("returns status code 200", function(done) {
       request(base_url, function(error, response, body) {
         //console.log(response);
+        if (error) {
+ 	  console.log(error)
+	  console.log(body)
+	}
 	rcode = response;
 	console.log("status code::"+rcode.statusCode); 
         expect(rcode.statusCode).toBe(200);
