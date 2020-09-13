@@ -41,7 +41,7 @@ pipeline {
 	steps {
           script {
 	    docker.withRegistry() {
-	      console.log(custImg)
+	      //console.log(custImg)
               custImg.push()
 	    }
 	  }
