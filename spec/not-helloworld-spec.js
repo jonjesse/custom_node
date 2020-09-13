@@ -5,7 +5,7 @@ var server = require("../app.js");
 var rcode = '';
 var response = '';
 var sleep = require('system-sleep');
-sleep(10000);
+sleep(200);
 
 
 describe("Hello World Server", function() {
