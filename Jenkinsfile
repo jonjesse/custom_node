@@ -38,7 +38,7 @@ pipeline {
       stage ('Cleanup') {
 	steps {
 	 script {
-	    int old_build = env.BUILID_ID-1
+	    int old_build = env.BUILD_ID-1
 	    sh 'docker rmi node-test:${old_build}'
 	   }
 	 }
