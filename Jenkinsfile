@@ -1,9 +1,9 @@
 #!groovy
 
 pipeline {
-  agent none
+  agent any
     stages {
-      stage ('build') {
+      stage ('Build') {
         node {
           checkout scm
 	  def custImg = docker.build("node:${env.BUILD_ID}")
@@ -18,7 +18,7 @@ pipeline {
 	  }
         }
       }
-      stage ('test') {
+      stage ('Test') {
 	node {
 	 custImg.inside() {
 	   sh 'npm test'
