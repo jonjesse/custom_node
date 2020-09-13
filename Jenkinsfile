@@ -1,7 +1,8 @@
 #!groovy
 
 def custImg = ""
-println(env.BUILD_ID)
+int curbld = env.BUILD_ID
+println(curbld)
 
 pipeline {
   agent any
@@ -38,7 +39,7 @@ pipeline {
       stage ('Cleanup') {
 	steps {
 	 script {
-	    int old_build = env.BUILD_ID-1
+	    int old_build = curbld - 1
 	    println("old_build"+old_build)
 	    sh "docker rmi node-test:${old_build}"
 	   }
