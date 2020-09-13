@@ -40,7 +40,7 @@ pipeline {
       stage ('Publish') {
 	steps {
           script {
-	    docker.withRegistry('','') {
+	    docker.withRegistry('https://hub.docker.com','jonjesse') {
 	      console.log(custImg)
               custImg.push()
 	    }
