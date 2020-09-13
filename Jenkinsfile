@@ -5,7 +5,7 @@ pipeline {
     stages {
       stage ('Build') {
         steps {
-	  node{
+	  script {
           checkout scm
 	  def custImg = docker.build("node:${env.BUILD_ID}")
          }
@@ -13,7 +13,7 @@ pipeline {
       }      
       stage ('RUN') {
         steps {
-	  node {
+	  script {
           custImg.inside() { //here you can mount volume if needed
 	    sh 'npm install --save express'
 	    sh 'npm install --save jasmine'
@@ -24,7 +24,7 @@ pipeline {
       }
       stage ('Test') {
 	steps {
-	 node {
+	 script {
 	 custImg.inside() {
 	   sh 'npm test'
 	 }
