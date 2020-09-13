@@ -7,5 +7,5 @@ var server = app.listen(3000, () => {
     console.log("Listening on port " + server.address().port + "...");
 });
 var sleep = require('system-sleep');
-sleep(1000);
+sleep(10);
 module.exports = server;

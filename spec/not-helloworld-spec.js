@@ -8,7 +8,7 @@ describe("Hello World Server", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
       request.get(base_url, function(error, response, body) {
-        console.log(response.statusCode);
+        console.log(response);
 	rcode = response;
 	console.log("status code::"+rcode.statusCode); 
         expect(rcode.statusCode).toBe(200);
