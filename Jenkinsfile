@@ -1,8 +1,9 @@
 #!groovy
 
+def custImg = ""
+
 pipeline {
   agent any
-  def custImg
     stages {
       stage ('Build') {
         steps {
