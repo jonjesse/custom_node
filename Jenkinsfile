@@ -39,7 +39,8 @@ pipeline {
 	steps {
 	 script {
 	    int old_build = env.BUILD_ID-1
-	    sh 'docker rmi node-test:${old_build}'
+	    println("old_build"+old_build)
+	    sh "docker rmi node-test:${old_build}"
 	   }
 	 }
 	}
