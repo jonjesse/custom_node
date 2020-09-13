@@ -38,8 +38,12 @@ pipeline {
 	}
       }
       stage ('Push') {
-        console.log(custImg)
-        custImg.push()
+	steps {
+          script {
+	    console.log(custImg)
+            custImg.push()
+	  }
+	}
       }
       stage ('Cleanup') {
 	steps {
