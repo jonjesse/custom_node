@@ -37,7 +37,7 @@ pipeline {
       stage ('Deploy') {
 	steps {
 	 script {
-	  docker.withRegistry('http://registry_new') {
+	  docker.withRegistry('https://registry_new') {
 	    custImg.push()
 	   }
 	 }
