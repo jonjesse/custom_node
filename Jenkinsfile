@@ -40,6 +40,7 @@ pipeline {
       stage ('Publish') {
 	steps {
           script {
+	    checkout scm
 	    docker.withRegistry() {
 	      //console.log(custImg)
               custImg.push()
