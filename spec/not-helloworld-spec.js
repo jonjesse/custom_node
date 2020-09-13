@@ -1,4 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 var request = require("request");
 var base_url = "http://localhost:3000/";
 var server = require("../app.js");
