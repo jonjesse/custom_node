@@ -1,6 +1,6 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 var request = require("request");
-var base_url = "http://localhost:3000/";
+var base_url = "http://127.0.0.1:3000/";
 var server = require("../app.js");
 var rcode = '';
 var response = '';
