@@ -40,7 +40,7 @@ pipeline {
 	steps {
 	 script {
 	    int old_build = curbld - 1
-	    println("old_build"+old_build)
+	    println("Deleing old_build "+old_build)
 	    sh "docker rmi node-test:${old_build}"
 	   }
 	 }
