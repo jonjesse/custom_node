@@ -41,7 +41,7 @@ pipeline {
 	steps {
           script {
 	    docker.withRegistry('','dockerbuildbot-index.docker.io') {
-	      console.log(custImg)
+	      printn("current image: "+custImg)
               custImg.push("jonjesse/node:${curbld}")
 	    }
 	  }
