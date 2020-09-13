@@ -37,11 +37,13 @@ pipeline {
 	 }
 	}
       }
-      stage ('Push') {
+      stage ('Publish') {
 	steps {
           script {
-	    console.log(custImg)
-            custImg.push()
+	    docker.withRegistry() {
+	      console.log(custImg)
+              custImg.push()
+	    }
 	  }
 	}
       }
