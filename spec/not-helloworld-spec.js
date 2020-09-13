@@ -12,11 +12,12 @@ describe("Hello World Server", function() {
         if (error) {
  	  console.log(error)
 	  console.log(body)
-	}
-	rcode = response;
-	console.log("status code::"+rcode.statusCode); 
-        expect(rcode.statusCode).toBe(200);
-        done();
+	} else {
+	  rcode = response;
+	  console.log("status code::"+rcode.statusCode); 
+          expect(rcode.statusCode).toBe(200);
+        }
+	done();
       });
     });
 
