@@ -4,7 +4,7 @@
   "description": "Simple Hello World demo app",
   "main": "app.js",
   "scripts": {
-    "test": "jasmine ./spec/*"
+    "test": "jasmine ./spec/not-helloworld-spec.js"
   },
   "author": "Batman",
   "license": "ISC",
