@@ -36,8 +36,9 @@ pipeline {
       stage ('Deploy') {
 	steps {
 	 script {
-	  docker.withRegistry('http://192.168.1.253:8111')
+	  docker.withRegistry('http://192.168.1.253:8111') {
 	    custImg.push()
+	   }
 	 }
 	}
       }
