@@ -5,7 +5,10 @@ pipeline {
     stages {
       stage ('RUN') {
         steps {
-	  sh 'npm install'
+	  sh 'npm init'
+	  sh 'npm install --save express'
+	  sh 'npm install --save jasmine'
+	  sh 'npm install --save request'
 	  sh 'npm test'
 	}
      }
