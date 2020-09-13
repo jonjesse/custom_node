@@ -7,7 +7,7 @@ pipeline {
     stages {
       stage ('Build') {
         steps {
-	  node {
+	  script {
           checkout scm
 	  custImg = docker.build("node-test:${env.BUILD_ID}")
          }
