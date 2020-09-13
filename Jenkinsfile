@@ -4,13 +4,13 @@ pipeline {
   agent any
     stages {
       stage ('Build') {
-        node {
+        steps {
           checkout scm
 	  def custImg = docker.build("node:${env.BUILD_ID}")
         }
       }      
       stage ('RUN') {
-        node {
+        steps {
           custImg.inside() { //here you can mount volume if needed
 	    sh 'npm install --save express'
 	    sh 'npm install --save jasmine'
@@ -19,7 +19,7 @@ pipeline {
         }
       }
       stage ('Test') {
-	node {
+	steps {
 	 custImg.inside() {
 	   sh 'npm test'
 	 }
