@@ -8,7 +8,7 @@ describe("Hello World Server", function() {
       request.get(base_url, function(error, response, body) {
         //console.log(response);
 	var rcode = response.statusCode;
-	//console.log("status code::"+response.statusCode) 
+	/console.log("status code::"+rcode) 
         expect(rcode).toBe(200);
         done();
       });
