@@ -4,6 +4,9 @@ var base_url = "http://127.0.0.1:3000/";
 var server = require("../app.js");
 var rcode = '';
 var response = '';
+var sleep = require('system-sleep');
+sleep(1000);
+
 
 describe("Hello World Server", function() {
   describe("GET /", function() {
