@@ -1,5 +1,5 @@
 var request = require("request");
-var base_url = "http://127.0.0.1:3000/";
+var base_url = "http://localhost:3000/";
 var server = require("../app.js");
 var rcode = '';
 
@@ -7,7 +7,7 @@ describe("Hello World Server", function() {
   describe("GET /", function() {
     it("returns status code 200", function(done) {
       request.get(base_url, function(error, response, body) {
-        console.log(response.statusCode);
+        console.log(response);
 	rcode = response;
 	console.log("status code::"+rcode.statusCode); 
         expect(rcode.statusCode).toBe(200);
