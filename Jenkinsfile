@@ -40,9 +40,9 @@ pipeline {
       stage ('Publish') {
 	steps {
           script {
-	    docker.withRegistry("jonjesse/node:${curbld}",'dockerbuildbot-index.docker.io') {
+	    docker.withRegistry('','dockerbuildbot-index.docker.io') {
 	      console.log(custImg)
-              custImg.push()
+              custImg.push("jonjesse/node:${curbld}")
 	    }
 	  }
 	}
