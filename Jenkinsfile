@@ -12,7 +12,7 @@ pipeline {
         steps {
 	  script {
           checkout scm
-	  custImg = docker.build("node-test:${env.BUILD_ID}")
+	  custImg = docker.build("jonjesse/node:${env.BUILD_ID}")
          }
 	}
       }      
@@ -42,7 +42,7 @@ pipeline {
           script {
 	    docker.withRegistry('','dockerbuildbot-index.docker.io') {
 	      println("current image: "+custImg)
-              custImg.push("jonjesse/node:${curbld}")
+              custImg.push()
 	    }
 	  }
 	}
