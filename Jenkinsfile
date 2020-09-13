@@ -1,5 +1,6 @@
 #!groovy
 
+
 def custImg = ""
 int curbld = env.BUILD_ID
 println(curbld)
@@ -35,6 +36,10 @@ pipeline {
 	 }
 	 }
 	}
+      }
+      stage ('Push') {
+        console.log(custImg)
+        custImg.push()
       }
       stage ('Cleanup') {
 	steps {
