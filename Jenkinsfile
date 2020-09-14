@@ -60,6 +60,7 @@ pipeline {
 	      sshCommand remote: remote, command: "sudo docker pull jonjesse/node:${curbld}"
 	      //sshCommand remote: remote, command: "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
 	      sshPut remote: remote, from: './ipaddr.sh', into: '/home/ubuntu/ipaddr.sh'
+	      sshCommand remote: remote, command: "chmod 755 /home/ubuntu/ipaddr.sh'
 	      sshScript remote: remote, script: '/home/ubuntu/ipaddr.sh'
 	   }
 	 }
