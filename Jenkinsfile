@@ -4,11 +4,11 @@
 def custImg = ""
 int curbld = env.BUILD_ID
 println(curbld)
-def remote = [:]
-remote.name = '18.218.165.47'
-remote.host = '18.218.165.47'
-remote.user = 'ubuntu'
-remote.allowAnyHosts = true
+//def remote = [:]
+//remote.name = '18.218.165.47'
+//remote.host = '18.218.165.47'
+//remote.user = 'ubuntu'
+//remote.allowAnyHosts = true
 
 pipeline {
   agent any
@@ -52,7 +52,7 @@ pipeline {
 	  }
 	}
       }
-      stage ('Deploy') {
+      /* stage ('Deploy') {
 	steps {
 	  script {
 	   withCredentials([sshUserPrivateKey(credentialsId:'ssh_aws', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: remote.user)]) {
@@ -66,7 +66,7 @@ pipeline {
 	   }
 	 }
        }
-      }
+      } */
       stage ('Cleanup') {
 	steps {
 	 script {
