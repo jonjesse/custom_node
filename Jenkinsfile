@@ -55,8 +55,8 @@ pipeline {
       stage ('Deploy') {
 	steps {
 	  sshagent(credentials : ['ssh_aws']) {
-	      sshCommand remote: remote, command: "docker pull jonjesse/node:${curbld}"
-	      sshCommand remote: remote, command: "docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
+	      sshCommand remote: remote, command: "sudo docker pull jonjesse/node:${curbld}"
+	      sshCommand remote: remote, command: "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
 	    }
 	 }
       }
