@@ -4,6 +4,10 @@
 def custImg = ""
 int curbld = env.BUILD_ID
 println(curbld)
+def remote = [:]
+remote.name = 'prod'
+remote.host = '18.218.165.47'
+remote.user = 'ubuntu'
 
 pipeline {
   agent any
@@ -47,12 +51,20 @@ pipeline {
 	  }
 	}
       }
+      stage ('Deploy') {
+	steps {
+	  sshagent(credentials : ['ssh_aws']) {
+	      sh "docker pull jonjesse/node:${curbld}"
+	      sh "docker run -it --rm -p 8111:3000 jonjesse/node:${curbld}"
+	    }
+	 }
+      }
       stage ('Cleanup') {
 	steps {
 	 script {
 	    int old_build = curbld - 1
 	    println("Deleing old_build "+old_build)
-	    sh "docker rmi node-test:${old_build}"
+	    sh "docker rmi jonjesse/node:${old_build}"
 	   }
 	 }
 	}
