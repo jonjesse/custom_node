@@ -54,12 +54,13 @@ pipeline {
       }
       stage ('Deploy') {
 	steps {
-	  sshagent(credentials : ['ssh_aws']) {
-	      sh "ssh -vvv -T ubuntu@${remote.host}"
-	      sh "docker pull jonjesse/node:${curbld}"
-	      sh "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
+	  script {
+	   withCredentials([sshUserPrivatekey(credentialsId:'ssh-aws', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: remote.user)]) {
+	      sshCommand remote: remote, command: "docker pull jonjesse/node:${curbld}"
+	      sshCommand remote: remote, command:  "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
 	    }
 	 }
+       }
       }
       stage ('Cleanup') {
 	steps {
