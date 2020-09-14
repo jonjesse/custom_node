@@ -55,7 +55,7 @@ pipeline {
       stage ('Deploy') {
 	steps {
 	  sshagent(credentials : ['ssh_aws']) {
-	      sh "ssh -vvv -T ubuntu@${remte.host}"
+	      sh "ssh -vvv -T ubuntu@${remote.host}"
 	      sh "docker pull jonjesse/node:${curbld}"
 	      sh "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
 	    }
