@@ -59,9 +59,10 @@ pipeline {
 	      remote.identityFile = identity
 	      sshCommand remote: remote, command: "sudo docker pull jonjesse/node:${curbld}"
 	      //sshCommand remote: remote, command: "sudo docker run -dit --rm -p 8111:3000 jonjesse/node:${curbld}"
-	      sshPut remote: remote, from: './ipaddr.sh', into: '/home/ubuntu/ipaddr.sh'
-	      sshCommand remote: remote, command: "sh /home/ubuntu/ipaddr.sh"
-	      //sshScript remote: remote, script: '/home/ubuntu/ipaddr.sh'
+	      //sshPut remote: remote, from: './ipaddr.sh', into: '/home/ubuntu/ipaddr.sh'
+	      sshPut remote: remote, from: './ipaddr.sh', into: '.'
+	      //sshCommand remote: remote, command: "sh /home/ubuntu/ipaddr.sh"
+	      sshScript remote: remote, script: 'ipaddr.sh'
 	   }
 	 }
        }
