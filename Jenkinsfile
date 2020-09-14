@@ -8,6 +8,7 @@ def remote = [:]
 remote.name = 'prod'
 remote.host = '18.218.165.47'
 remote.user = 'ubuntu'
+remote.allowAnyHosts = true
 
 pipeline {
   agent any
