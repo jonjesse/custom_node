@@ -1,11 +1,8 @@
 var exp = require('express');
 var app = exp();
-var oss = require('os');
-var myhost = oss.hostname();
 
 app.get('/', function(req, res) {
-  var nothello = "this is NOT hello world...<br/><br/>" +"ContainerID:"+ myhost;
-  res.send(nothello);
+  res.send('this is NOT hello world...');
 });
 var sleep = require('system-sleep');
 sleep(10);
