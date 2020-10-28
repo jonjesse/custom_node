@@ -28,7 +28,7 @@ pipeline {
 	    //sh 'npm install --save express'
 	    //sh 'npm install --save jasmine'
 	   // sh 'npm install --save request'
-	    sh 'npm install'
+	    sh 'npm install --save express request os jasmine system-sleep'
 	   // sh 'npm install system-sleep'
 	   }
 	  }
