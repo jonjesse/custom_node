@@ -25,10 +25,11 @@ pipeline {
         steps {
 	  script {
           custImg.inside() { //here you can mount volume if needed
-	    sh 'npm install --save express'
-	    sh 'npm install --save jasmine'
-	    sh 'npm install --save request'
-	    sh 'npm install system-sleep'
+	    //sh 'npm install --save express'
+	    //sh 'npm install --save jasmine'
+	   // sh 'npm install --save request'
+	    sh 'npm install'
+	   // sh 'npm install system-sleep'
 	   }
 	  }
         }
