@@ -6,7 +6,7 @@ var netint = oss.networkInterfaces();
 console.log(netint);
 
 app.get('/', function(req, res) {
-  var nothello = "this is NOT hello world...<br/><br/>" +"ContainerID: "+ myhost+"<br/>SourceIP: "+req.connection.remoteAddress+"<br/>Hostaddress: "+req.headers.host+"<br/>ContainerIP: "+netint['eth0'][0].address;
+  var nothello = "Testing...<br/><br/>" +"ContainerID: "+ myhost+"<br/>SourceIP: "+req.connection.remoteAddress+"<br/>Hostaddress: "+req.headers.host+"<br/>ContainerIP: "+netint['eth0'][0].address;
   console.log(req.headers);
   res.send(nothello);
 });
