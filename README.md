@@ -1,4 +1,4 @@
-# this is not hello-world...
+# Sample JS page...
 
-not hello-world node js example
+sample node js example
 
