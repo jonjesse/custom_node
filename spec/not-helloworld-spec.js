@@ -27,7 +27,7 @@ describe("Hello World Server", function() {
 
     it("returns Hello World", function(done) {
       request.get(base_url, function(error, response, body) {
-        expect(body).toMatch(/world/);
+        expect(body).toMatch(/Testing/);
         done();
 
         server.close();
