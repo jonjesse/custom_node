@@ -1,11 +1,11 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 var request = require("request");
 var base_url = "http://127.0.0.1:3000/";
-var server = require("../app.js");
+var server = require("/app/app.js");
 var rcode = '';
 var response = '';
-var sleep = require('system-sleep');
-sleep(200);
+//var sleep = require('system-sleep');
+//sleep(200);
 
 
 describe("Hello World Server", function() {
@@ -30,7 +30,7 @@ describe("Hello World Server", function() {
         expect(body).toMatch(/Testing/);
         done();
 
-        server.close();
+        //server.close();
       });
     });
   });
