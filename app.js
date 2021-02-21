@@ -10,8 +10,8 @@ app.get('/', function(req, res) {
   console.log(req.headers);
   res.send(nothello);
 });
-var sleep = require('system-sleep');
-sleep(10);
+//var sleep = require('system-sleep');
+//sleep(10);
 
 var server = app.listen(3000, function()  {
     console.log("Listening on port " + server.address().port + "...");
